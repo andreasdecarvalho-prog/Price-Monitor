@@ -29,7 +29,27 @@ The project is structured to reflect real-world freelance automation and data co
 
 ## Project Structure
 
-price_monitor/ │ ├── app/ │   ├── core/ │   │   └── config.py          # Centralized configuration │   │ │   └── services/ │       ├── scraper.py         # Data collection logic │       ├── processor.py       # Data cleaning and normalization │       ├── reporter.py        # CSV report generation │       └── delivery.py        # Data delivery utilities │ ├── scripts/ │   └── run_pipeline.py        # Pipeline entry point │ ├── data/ │   └── books.csv              # Parsed data │ ├── requirements.txt ├── .env.example └── README.md
+price_monitor/
+│
+├── app/
+│   ├── core/
+│   │   └── config.py          
+│   │
+│   └── services/
+│       ├── scraper.py         
+│       ├── processor.py      
+│       ├── reporter.py        
+│       └── delivery.py        
+│
+├── scripts/
+│   └── run_pipeline.py        
+│
+├── data/
+│   └── books.csv              
+│
+├── requirements.txt
+├── .env.example
+└── README.md
 
 ---
 
