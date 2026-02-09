@@ -29,7 +29,7 @@ The project is structured to reflect real-world freelance automation and data co
 
 ## Project Structure
 
-price_monitor/
+price_monitor
 │
 ├── app/
 │   ├── core/
