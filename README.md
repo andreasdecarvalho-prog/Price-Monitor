@@ -33,19 +33,19 @@ price_monitor/
 │
 ├── app/
 │   ├── core/
-│   │   └── config.py          # Centralized configuration
+│   │   └── config.py
 │   │
 │   └── services/
-│       ├── scraper.py         # Data collection logic
-│       ├── processor.py       # Data cleaning and normalization
-│       ├── reporter.py        # CSV report generation
-│       └── delivery.py        # Data delivery utilities
+│       ├── scraper.py
+│       ├── processor.py
+│       ├── reporter.py
+│       └── delivery.py
 │
 ├── scripts/
-│   └── run_pipeline.py        # Pipeline entry point
+│   └── run_pipeline.py
 │
 ├── data/
-│   └── books.csv              # Parsed data
+│   └── books.csv
 │
 ├── requirements.txt
 ├── .env.example
