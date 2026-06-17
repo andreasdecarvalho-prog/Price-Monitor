@@ -1,132 +1,149 @@
-# Price Monitor — Automated Web Data Collection Pipeline
+# Price Monitor — Pipeline Automatizado de Coleta de Dados da Web
 
-## Overview
+## Visão Geral
 
-This project is a Python-based automation pipeline for collecting, cleaning, and delivering structured data from websites.
+Este projeto é um pipeline de automação em Python para coletar, limpar e gerar dados estruturados a partir de sites.
 
-It demonstrates how to:
+O projeto demonstra como:
 
-- scrape data from paginated websites
-- process and normalize raw data using pandas
-- export clean datasets to CSV
-- run the entire pipeline automatically with a single command
+- extrair (scrape) dados de sites com paginação
+- processar e normalizar dados brutos usando pandas
+- exportar conjuntos de dados limpos para CSV
+- executar todo o pipeline automaticamente com um único comando
 
-The project is structured to reflect real-world freelance automation and data collection tasks.
-
----
-
-## Features
-
-- Web scraping with `requests` and `BeautifulSoup`
-- Pagination handling
-- Data cleaning and transformation with `pandas`
-- Duplicate removal and type normalization
-- CSV report generation
-- Modular, production-style project structure
-- Config-driven setup (no hardcoded URLs)
+A estrutura do projeto reflete tarefas reais de automação e coleta de dados para trabalhos freelance.
 
 ---
 
-## How It Works
+## Funcionalidades
 
-### 1. Scraper
-
-- Fetches data from a paginated website
-- Extracts structured fields (e.g. title, price, URL)
-- Returns raw data as Python dictionaries
-
-### 2. Processor
-
-- Converts raw data into a pandas DataFrame
-- Cleans and normalizes values
-- Removes duplicates
-- Ensures correct data types
-
-### 3. Reporter
-
-- Exports the processed dataset to CSV
-- Stores reports in an organized directory
-
-### 4. Pipeline
-
-- Orchestrates all steps from scraping to delivery
-- Designed to run unattended
+- Web scraping com `requests` e `BeautifulSoup`
+- Tratamento de paginação
+- Limpeza e transformação de dados com `pandas`
+- Remoção de duplicados e normalização de tipos
+- Geração de relatórios em CSV
+- Estrutura modular no estilo de produção
+- Configuração orientada por arquivo (sem URLs hardcoded)
 
 ---
 
-## Installation
+## Estrutura do Projeto
 
-Clone the repository and install dependencies:
+```
+price_monitor/
+│
+├── app/
+│   ├── core/
+│   │   └── config.py          # Configuração centralizada
+│   │
+│   └── services/
+│       ├── scraper.py         # Lógica de coleta de dados
+│       ├── processor.py       # Limpeza e normalização dos dados
+│       ├── reporter.py        # Geração de CSV
+│       └── delivery.py        # Utilitários de entrega de dados
+│
+├── scripts/
+│   └── run_pipeline.py        # Ponto de entrada do pipeline
+│
+├── data/
+│   ├── books.csv              # Dados parseados
+│
+├── requirements.txt
+├── .env.example
+└── README.md
+```
+
+---
+
+## Como Funciona
+
+1. Scraper
+
+   - Busca dados em um site paginado
+   - Extrai campos estruturados (ex.: título, preço, URL)
+   - Retorna dados brutos como dicionários Python
+
+2. Processor
+
+   - Converte os dados brutos em um DataFrame do pandas
+   - Limpa e normaliza valores
+   - Remove duplicados
+   - Garante tipos de dados corretos
+
+3. Reporter
+
+   - Exporta o conjunto processado para CSV
+   - Armazena relatórios em diretórios organizados
+
+4. Pipeline
+
+   - Orquestra todas as etapas, da coleta até a entrega
+   - Projetado para rodar de forma não assistida
+
+---
+
+## Instalação
+
+Clone o repositório e instale as dependências:
 
 ```bash
-git clone https://github.com/andreasdecarvalho-prog/price_monitor.git
-cd price_monitor
+git clone https://github.com/andreasdecarvalho-prog/Price-Monitor.git
+cd Price-Monitor
 pip install -r requirements.txt
-
+```
 
 ---
 
-Configuration
+## Configuração
 
-All configurable values live in one place.
+Todos os valores configuráveis ficam centralizados.
 
-Create a .env file based on the example:
+Crie um arquivo `.env` com base no exemplo:
 
+```bash
 cp .env.example .env
+```
 
-Edit values in app/core/config.py or .env as needed.
-
+Edite os valores em `app/core/config.py` ou no arquivo `.env` conforme necessário.
 
 ---
 
-Running the Pipeline
+## Executando o Pipeline
 
-Run the full automation pipeline with:
+Execute todo o pipeline com:
 
+```bash
 python scripts/run_pipeline.py
+```
 
-After execution:
+Após a execução:
 
-Cleaned data will be saved as a CSV file in data/books.csv
-
-Logs and prints will indicate processing status
-
-
+- Os dados limpos serão salvos em CSV em `data/books.csv`
+- Logs e mensagens indicarão o progresso do processamento
 
 ---
 
-Use Cases
+## Casos de Uso
 
-This project reflects common freelance tasks such as:
+Este projeto espelha tarefas comuns de freelance, como:
 
-price monitoring
-
-product catalog extraction
-
-market research data collection
-
-replacing manual Excel workflows
-
-scheduled or recurring data delivery
-
-
+- monitoramento de preços
+- extração de catálogo de produtos
+- coleta de dados para pesquisa de mercado
+- substituição de fluxos manuais em Excel
+- entrega de dados agendada ou recorrente
 
 ---
 
-Notes
+## Observações
 
-The target website used during development is a public demo site for scraping practice.
-
-The architecture is intentionally simple and extensible.
-
-The project can be adapted to other websites, schemas, or delivery formats.
-
-
+- O site alvo usado no desenvolvimento é um site público de demonstração para prática de scraping.
+- A arquitetura é propositalmente simples e extensível.
+- O projeto pode ser adaptado para outros sites, esquemas ou formatos de entrega.
 
 ---
 
-Author
+## Autor
 
-Developed by Andreas de Carvalho
+Desenvolvido por Andreas de Carvalho  
 Python Automation • Web Scraping • Data Processing
-
