@@ -63,19 +63,16 @@ O Price Monitor executa um pipeline completo e automatizado:
 
 ### Setup
 
-1. Clone o repositório:
-```bash
+```
+# 1. Clone o repositório:
 git clone https://github.com/andreasdecarvalho-prog/Price-Monitor.git
 cd Price-Monitor
-```
 
-2. Instale as dependências:
-```bash
+
+# 2. Instale as dependências:
 pip install -r requirements.txt
-```
 
-3. Configure as variáveis de ambiente:
-```bash
+# 3. Configure as variáveis de ambiente:
 cp .env.example .env
 # Edite .env e adicione:
 # URL=https://seu-website.com
