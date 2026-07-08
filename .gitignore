@@ -1,0 +1,7 @@
+.env
+logs/pipeline.log
+data/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
