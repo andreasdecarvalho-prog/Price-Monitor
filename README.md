@@ -1,27 +1,20 @@
 # Price Monitor
 
-## 📌 Visão Geral
+##  Visão Geral
 
 **Price Monitor** é uma solução automatizada de web scraping e monitoramento de preços que coleta, processa e estrutura dados de produtos de forma eficiente e confiável. O projeto foi desenvolvido com foco em robustez, rastreabilidade e facilidade de manutenção.
 
-## 🎯 O Que o Projeto Faz
+## O Que o Projeto Faz
 
 O Price Monitor executa um pipeline completo e automatizado:
 
-1. **Scraping Web**: Extrai dados de produtos (título, preço e URL) de websites de forma escalável, com tratamento de paginação automática
+1. **Web Scraping**: Extrai dados de produtos (título, preço e URL) de websites de forma escalável, com tratamento de paginação automática
 2. **Processamento de Dados**: Limpa, valida e transforma dados brutos em informações estruturadas e prontas para análise
 3. **Armazenamento**: Persiste os dados em formato CSV para fácil integração com outras ferramentas e sistemas
 4. **Logging Avançado**: Registra toda a execução com histórico rotativo de logs para auditoria e debugging
 
-### Pipeline de Execução
 
-```
-URL (Env) → Scraping → Processamento → Validação → CSV Output
-                ↓
-           Logging centralizado
-```
-
-## 💼 Valor para Empresas
+## Valor para do Projeto
 
 ### 1. **Inteligência Competitiva**
 - Monitore preços de concorrentes em tempo real
@@ -48,6 +41,7 @@ URL (Env) → Scraping → Processamento → Validação → CSV Output
 - Facilmente configurável para diferentes fontes via variável de ambiente
 - Estrutura modular permite expansão para múltiplas URLs
 - Exportação em CSV permite integração com BI, DataLakes, e sistemas analíticos
+- Facilmente integrado com ferramentas de automação IA como Zapier, Pluga, RD Station
 
 ### 6. **Conformidade e Governança**
 - Logs com retenção de 7 dias para rastreamento de operações
@@ -105,7 +99,7 @@ A execução:
 ```
 Price-Monitor/
 ├── main.py                 # Orquestrador do pipeline
-├── scripts/
+├── src/
 │   ├── scraper.py         # Web scraping com tratamento de paginação
 │   ├── processor.py       # Limpeza e validação de dados
 │   └── reporter.py        # Exportação para CSV
@@ -145,17 +139,6 @@ O CSV gerado contém as seguintes colunas:
 ### Deduplicação
 - Remove produtos duplicados baseado no título
 - Mantém primeira ocorrência para preservar consistência
-
-## 🔒 Boas Práticas
-
-- Respeite `robots.txt` e termos de serviço do website
-- Use User-Agent apropriado
-- Implemente delays entre requisições se necessário
-- Monitore logs regularmente para problemas
-
-## 📝 Licença
-
-Este projeto é fornecido como está.
 
 ## 👨‍💻 Autor
 
